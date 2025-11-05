@@ -231,13 +231,13 @@
                     <span class="journal">NeurIPS 2025</span>
                     
                     <ul class="bullet-summary">
-                        <li>**Problem Identification:** Solved the critical **Output Alignment Problem** in Long-Term Time Series Forecasting ($\text{LTSF}$), where predictions lack consistency across lagged inputs.</li>
-                        <li>**Methodology:** Developed **AliO (Align Outputs)**, a novel loss function that ensures prediction consistency in both **time and frequency domains**.</li>
-                        <li>**Key Metric:** Proposed the **Time Alignment Metric ($\text{TAM}$)** to quantitatively measure prediction consistency and data-model robustness, a factor previously unaddressed by $\text{MSE}$.</li>
-                        <li>**Performance Highlights:** Achieved substantial performance gains across $\text{LTSF}$ models:
+                        <li><strong>Problem Identification:</strong> Solved the critical <strong>Output Alignment Problem</strong> in Long-Term Time Series Forecasting (LTSF), where predictions lack consistency across lagged inputs.</li>
+                        <li><strong>Methodology:</strong> Developed <strong>AliO (Align Outputs)</strong>, a novel loss function that ensures prediction consistency in both <strong>time and frequency domains</strong>.</li>
+                        <li><strong>Key Metric:</strong> Proposed the <strong>Time Alignment Metric (TAM)</strong> to quantitatively measure prediction consistency and data-model robustness, a factor previously unaddressed by MSE.</li>
+                        <li><strong>Performance Highlights:</strong> Achieved substantial performance gains across LTSF models:
                             <ul>
-                                <li>$\text{MSE}$ Improvement: Up to **$27.5\%$**</li>
-                                <li>$\text{TAM}$ Improvement: Up to **$58.2\%$**</li>
+                                <li>MSE Improvement: Up to <strong>27.5\%</strong></li>
+                                <li>$\text{TAM}$ Improvement: Up to <strong>$58.2\%</strong></li>
                             </ul>
                         </li>
                     </ul>
@@ -247,10 +247,22 @@
                 <li>
                     <span class="title">PPT: Patch Order Do Matters In Time Series Pretext Task</span>
                     <span class="journal">ICLR 2025</span>
-                    <p>
-                        Introduced Patch order-aware Pretext Task (PPT), the first order-aware self-supervised learning task for patch-based time series models. Achieved up to <strong style="color:var(--primary-color);">7% accuracy improvement</strong> in supervised cardiogram tasks, enhancing model performance by integrating structural order awareness.</p>
-                    <img src="figures/paper-thumbnails/ppt-image.png" alt="PPT Figure 1" class="paper-image" style="max-width: 500px;"> </li>
-
+                    
+                    <ul class="bullet-summary">
+                        <li><strong>Problem Identification:</strong> Identified that existing patch-based models often fail to capture essential <strong>time- and channel-wise patch order dependencies</strong> in time series data.</li>
+                        <li><strong>Methodology:</strong> Introduced <strong>PPT (Patch order-aware Pretext Task)</strong>, a novel self-supervised learning task that exploits intrinsic sequential order information through <strong>channel-wise patch permutations</strong>.</li>
+                        <li><strong>Key Components:</strong> Proposed two core learning methods: <strong>Patch Order Consistency Learning</strong> (quantifies correctness) and <strong>Contrastive Learning</strong> (distinguishes permutation strength).</li>
+                        <li><strong>Key Metric:</strong> Proposed <strong>ACF-COS</strong> (Autocorrelation Function with Cosine Similarity), a metric to quantify the "orderness" of a time series dataset.</li>
+                        <li><strong>Performance Highlights:</strong> Enhanced model performance over mask-based learning by:
+                            <ul>
+                                <li>Supervised Task: Improving up to <strong>7% accuracy</strong> for cardiogram tasks.</li>
+                                <li>Self-Supervised Task: Outperforming mask-based learning by <strong>5%</strong> in human activity recognition.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <img src="figures/paper-thumbnails/ppt-image.png" alt="PPT Figure 1" class="paper-image" style="max-width: 500px;">
+                </li>
                 <li>
                     <span class="title">Smart ECU: Scalable On-Vehicle Deployment of Drivetrain Fault Classification Systems for Commercial Electric Vehicles</span>
                     <span class="journal">CIKM 2025</span>
