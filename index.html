@@ -13,6 +13,7 @@
             --text-color: #333333;
             --light-text: #666666;
             --link-hover: #e0b04c; /* Lighter Gold for hover */
+            --light-gold: #d4b984; /* 연한 황금색 추가 */
         }
 
         /* Basic Styles */
@@ -112,7 +113,7 @@
             left: 50%;
             transform: translateX(-50%);
 
-            top: 220px;
+            top: 320px;
             z-index: 10;
         }
         
@@ -167,7 +168,7 @@
         
         .interest-tag {
             display: inline-block;
-            background: var(--accent-color);
+            background: var(--light-gold);
             color: var(--primary-color);
             padding: 5px 10px;
             margin: 0 8px 8px 0;
@@ -236,8 +237,8 @@
                         <li><strong>Key Metric:</strong> Proposed the <strong>Time Alignment Metric (TAM)</strong> to quantitatively measure prediction consistency and data-model robustness, a factor previously unaddressed by MSE.</li>
                         <li><strong>Performance Highlights:</strong> Achieved substantial performance gains across LTSF models:
                             <ul>
-                                <li>MSE Improvement: Up to <strong>27.5\%</strong></li>
-                                <li>$\text{TAM}$ Improvement: Up to <strong>$58.2\%</strong></li>
+                                <li>MSE Improvement: Up to <strong>27.5%</strong></li>
+                                <li>\text{TAM} Improvement: Up to <strong>58.2%</strong></li>
                             </ul>
                         </li>
                     </ul>
@@ -266,16 +267,40 @@
                 <li>
                     <span class="title">Smart ECU: Scalable On-Vehicle Deployment of Drivetrain Fault Classification Systems for Commercial Electric Vehicles</span>
                     <span class="journal">CIKM 2025</span>
-                    <p>
-                        Pioneered the first on-vehicle drivetrain fault classification system (Smart ECU) deployed on a resource-constrained MCU for commercial EVs. Achieved <strong style="color:var(--primary-color);">99.24% memory reduction</strong> compared to prior cloud-based work while maintaining high diagnostic accuracy.</p>
-                    <img src="figures/paper-thumbnails/smart-ecu-image.png" alt="Smart ECU Figure 1" class="paper-image" style="max-width: 500px;"> </li>
-                
+                    
+                    <ul class="bullet-summary">
+                        <li><strong>Goal:</strong> Presented Smart ECU, the <strong>first on-vehicle drivetrain fault classification solution</strong> for motor-reducers on commercial EVs, designed for scalable mass production.</li>
+                        <li><strong>Data:</strong> Collected authentic fault and normal vibration data from **seven different EV models** (e.g., Hyundai IONIQ 5, KIA EV6) and over 19 drivetrains under diverse real-world driving conditions.</li>
+                        <li><strong>Deployment Challenge:</strong> Addressed the challenge of deploying on **extremely resource-constrained ECU** environments, facilitating Progonstic and Health Management (PHM) solutions on commercial EVs.</li>
+                        <li><strong>Efficiency & Results:</strong> Achieved strong efficiency and performance:
+                            <ul>
+                                <li>Model Size: Required only <strong>3.28 MB of memory</strong>, a <strong>99.24% reduction</strong> compared to prior cloud-based methods.</li>
+                                <li>Generalizability: Demonstrated <strong>strong generalization performance</strong> in both intra-car (same vehicle type) and inter-car (different vehicle types) evaluations.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <img src="figures/paper-thumbnails/smart-ecu-image.png" alt="Smart ECU Figure 1" class="paper-image" style="max-width: 500px;">
+                </li>
                 <li>
                     <span class="title">SMMF: Square-Matricized Momentum Factorization for Memory-Efficient Optimization</span>
                     <span class="journal">AAAI 2025</span>
-                    <p>
-                        Developed SMMF, a memory-efficient optimizer that reduces the memory requirement of adaptive optimizers (e.g., Adam) by up to <strong style="color:var(--primary-color);">96%</strong> using a novel square-matricization and one-time factorization scheme. Confirmed theoretical convergence via regret bound analysis.</p>
-                    <img src="figures/paper-thumbnails/smmf-image.png" alt="SMMF Algorithm 1" class="paper-image" style="max-width: 500px;"> </li>
+                    
+                    <ul class="bullet-summary">
+                        <li><strong>Problem Solved:</strong> Addressed the high memory consumption of widely-used adaptive optimizers (e.g., Adam) in training large-scale Deep Learning models.</li>
+                        <li><strong>Methodology:</strong> Proposed <strong>SMMF (Square-Matricized Momentum Factorization)</strong>, a novel method utilizing a <strong>square-matricization and one-time single matrix factorization</strong> scheme.</li>
+                        <li><strong>Key Advantage:</strong> Enables flexible and efficient factorization of momentum tensors regardless of their arbitrary rank (shape), making it applicable to all layers (Linear, CNN, Transformer).</li>
+                        <li><strong>Theoretical Foundation:</strong> Provided a <strong>regret bound analysis</strong> to theoretically confirm that SMMF converges comparably to non-memory-efficient adaptive optimizers.</li>
+                        <li><strong>Performance Highlights:</strong> Achieved state-of-the-art memory efficiency:
+                            <ul>
+                                <li>Memory Reduction: Reduced the memory requirement by up to <strong>96%</strong> compared to standard adaptive optimizers.</li>
+                                <li>Competitive Performance: Maintained competitive optimization capability across various benchmarks (e.g., ResNet50 on ImageNet).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <img src="figures/paper-thumbnails/smmf-image.png" alt="SMMF Algorithm 1" class="paper-image" style="max-width: 500px;">
+                </li>
             </ul>
         </section>
 
