@@ -1,1 +1,303 @@
-<h1>Hello, GitHub Pages!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwangryeol Park - AI/ML Engineer (UNIST)</title>
+    <style>
+        /* Color Variables */
+        :root {
+            --primary-color: #6a1b29; /* Dark Red / 붉은색 */
+            --accent-color: #ab863a; /* Golden Yellow / 황금색 */
+            --background-color: #fcfcf8; /* Light Beige / 지정된 배경색 */
+            --text-color: #333333;
+            --light-text: #666666;
+            --link-hover: #e0b04c; /* Lighter Gold for hover */
+        }
+
+        /* Basic Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+
+        /* Container and Layout */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: #ffffff;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 1.7em;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        /* Header / Hero Section */
+        .header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        .header h1 {
+            color: #ffffff;
+            font-size: 2.8em;
+            margin-bottom: 5px;
+            border-bottom: none;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #e0e0e0;
+        }
+
+        .contact-info a {
+            color: #ffffff;
+            margin: 0 10px;
+            font-size: 1.1em;
+        }
+        
+        .contact-info a:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        /* Profile Image */
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent-color);
+            margin-top: -100px; /* Pulls image up over header */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: block;
+            margin: -100px auto 20px auto;
+        }
+        
+        /* Publications Section */
+        .publication-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .publication-list li {
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .publication-list .title {
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .publication-list .journal {
+            color: var(--light-text);
+            font-style: italic;
+        }
+
+        .publication-list img.paper-image {
+            width: 100%;
+            max-width: 200px; /* Adjust size */
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        
+        /* Skills and Interests */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category h3 {
+            color: var(--primary-color);
+            font-size: 1.1em;
+            margin-top: 0;
+            border-bottom: 1px dashed var(--accent-color);
+            padding-bottom: 5px;
+        }
+        
+        .interest-tag {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            margin: 0 8px 8px 0;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            color: var(--light-text);
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>KWANGREOL PARK</h1>
+        <p>Ph.D. Candidate (7th Semester) at UNIST AI Graduate School</p>
+        <div class="contact-info">
+            <a href="mailto:kjh3690@unist.ac.kr">Email</a> | 
+            <a href="https://github.com/KwangryeolPark">GitHub</a> | 
+            <a href="https://www.linkedin.com/in/%EA%B4%91%EB%A0%AC-%EB%B0%95-bb416a271/">LinkedIn</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <img src="profile-placeholder.jpg" alt="Profile Picture" class="profile-pic"> 
+        <section class="section">
+            <h2>Summary</h2>
+            <p>
+                Highly accomplished AI/ML Engineer with a proven track record in developing robust and memory-efficient solutions for Time Series Analysis and Embedded AI systems. My research focuses on enhancing the reliability and performance of Deep Learning models, evidenced by four publications accepted at top-tier conferences (NeurIPS, ICLR, CIKM, AAAI) during my Ph.D. program. Expertise includes Time Series Forecasting, Self-Supervised Learning, Model Optimization, and practical C/C++ deployment on resource-constrained hardware.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Selected Publications</h2>
+            <ul class="publication-list">
+                
+                <li>
+                    <span class="title">AliO: Output Alignment Matters in Long-Term Time Series Forecasing</span>
+                    <span class="journal">NeurIPS 2025</span>
+                    <p>
+                        Proposed a novel loss function (AliO) to address the output alignment problem in Long-Term Time Series Forecasting (LTSF). Achieved up to <strong style="color:var(--primary-color);">27.5% MSE improvement</strong> and <strong style="color:var(--primary-color);">58.2% TAM improvement</strong> across various models and datasets.</p>
+                    <img src="alio-image.png" alt="AliO Figure 1" class="paper-image" style="max-width: 300px;"> </li>
+
+                <li>
+                    <span class="title">PPT: Patch Order Do Matters In Time Series Pretext Task</span>
+                    <span class="journal">ICLR 2025</span>
+                    <p>
+                        Introduced Patch order-aware Pretext Task (PPT), the first order-aware self-supervised learning task for patch-based time series models. Achieved up to <strong style="color:var(--primary-color);">7% accuracy improvement</strong> in supervised cardiogram tasks, enhancing model performance by integrating structural order awareness.</p>
+                    <img src="ppt-image.png" alt="PPT Figure 1" class="paper-image" style="max-width: 300px;"> </li>
+
+                <li>
+                    <span class="title">Smart ECU: Scalable On-Vehicle Deployment of Drivetrain Fault Classification Systems for Commercial Electric Vehicles</span>
+                    <span class="journal">CIKM 2025</span>
+                    <p>
+                        Pioneered the first on-vehicle drivetrain fault classification system (Smart ECU) deployed on a resource-constrained MCU for commercial EVs. Achieved <strong style="color:var(--primary-color);">99.24% memory reduction</strong> compared to prior cloud-based work while maintaining high diagnostic accuracy.</p>
+                    <img src="smart-ecu-image.png" alt="Smart ECU Figure 1" class="paper-image" style="max-width: 300px;"> </li>
+                
+                <li>
+                    <span class="title">SMMF: Square-Matricized Momentum Factorization for Memory-Efficient Optimization</span>
+                    <span class="journal">AAAI 2025</span>
+                    <p>
+                        Developed SMMF, a memory-efficient optimizer that reduces the memory requirement of adaptive optimizers (e.g., Adam) by up to <strong style="color:var(--primary-color);">96%</strong> using a novel square-matricization and one-time factorization scheme. Confirmed theoretical convergence via regret bound analysis.</p>
+                    <img src="smmf-image.png" alt="SMMF Algorithm 1" class="paper-image" style="max-width: 300px;"> </li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Technical Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Core ML/DL & Data Science</h3>
+                    <ul>
+                        <li>PyTorch (Expert)</li>
+                        <li>TensorFlow</li>
+                        <li>Python (Pandas, NumPy, Scikit-learn)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Embedded Systems & Deployment</h3>
+                    <ul>
+                        <li>C/C++</li>
+                        <li>ARM (STM32, Microcontrollers)</li>
+                        <li>Linux, Docker (Deployment)</li>
+                        <li>Octave, Arduino, Expressif</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Development</h3>
+                    <ul>
+                        <li>Visual Studio, Android Studio</li>
+                        <li>GitHub (Primary Version Control)</li>
+                        <li>HTML, CSS, Flutter (Web/Mobile)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Research Interests</h2>
+            <div>
+                <span class="interest-tag">Time Series Forecasting</span>
+                <span class="interest-tag">Anomaly Detection</span>
+                <span class="interest-tag">Prognostics and Health Management (PHM)</span>
+                <span class="interest-tag">Self-Supervised Learning (SSL)</span>
+                <span class="interest-tag">Memory-Efficient Optimization</span>
+                <span class="interest-tag">Embedded / Edge AI</span>
+                <span class="interest-tag">Large Language Models (LLM)</span>
+                <span class="interest-tag">Multimodal AI</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Education</h2>
+            <p>
+                <strong style="color:var(--primary-color);">Ulsan National Institute of Science and Technology (UNIST)</strong><br>
+                AI Graduate School (Embedded AI Lab by Seulki Lee)<br>
+                Ph.D. Candidate (Integrated M.S. & Ph.D. Program, 7th Semester) (2022 - Present)
+            </p>
+            <p>
+                <strong style="color:var(--primary-color);">Sangmyung University</strong><br>
+                B.S. in Electronic Engineering (Embedded Systems Track)<br>
+                Graduated with Honors (Early Graduation) (~2022)
+            </p>
+        </section>
+
+    </div>
+    
+    <footer class="footer">
+        © 2025 Kwangryeol Park. Built with Passion for AI.
+    </footer>
+
+</body>
+</html>
