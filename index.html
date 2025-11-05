@@ -39,10 +39,12 @@
         /* Container and Layout */
         .container {
             max-width: 1200px;
-            margin: 30px auto;
+            margin: 150px auto 30px auto;
             padding: 0 20px;
         }
-
+        .section:first-of-type {
+            margin-top: 0;
+        }
         .section {
             background: #ffffff;
             padding: 30px;
@@ -68,9 +70,10 @@
         .header {
             background-color: var(--primary-color);
             color: #ffffff;
-            padding: 40px 0;
+            padding: 50px 0 100px 0;
             text-align: center;
             border-bottom: 5px solid var(--accent-color);
+            position: relative;
         }
 
         .header h1 {
@@ -105,8 +108,12 @@
             border: 5px solid var(--accent-color);
             margin-top: -100px; /* Pulls image up over header */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            display: block;
-            margin: -100px auto 20px auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            top: 220px;
+            z-index: 10;
         }
         
         /* Publications Section */
@@ -182,7 +189,7 @@
 
     <header class="header">
         <h1>Kwangryeol Park</h1>
-        <p>Ph.D. Candidate (7th Semester [2025]) at UNIST AI Graduate School</p>
+        <p>Ph.D. Student (7th Semester [2025]) at UNIST AI Graduate School</p>
         <div class="contact-info">
             <a href="mailto:pkr7098@unist.ac.kr">pkr7098@unist.ac.kr</a> | 
             <a href="https://github.com/KwangryeolPark">GitHub</a> | 
