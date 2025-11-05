@@ -40,7 +40,7 @@
         /* Container and Layout */
         .container {
             max-width: 1200px;
-            margin: 150px auto 30px auto;
+            margin: 30px auto;
             padding: 0 20px;
         }
         .section:first-of-type {
@@ -71,7 +71,7 @@
         .header {
             background-color: var(--primary-color);
             color: #ffffff;
-            padding: 50px 0 100px 0;
+            padding: 40px 20px 20px 20px;
             text-align: center;
             border-bottom: 5px solid var(--accent-color);
             position: relative;
@@ -91,7 +91,8 @@
 
         .contact-info a {
             color: #ffffff;
-            margin: 0 10px;
+            margin: 5px auto;
+            display: block;
             font-size: 1.1em;
         }
         
@@ -109,12 +110,16 @@
             border: 5px solid var(--accent-color);
             margin-top: -100px; /* Pulls image up over header */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            position: absolute;
+            position: relative;
             left: 50%;
-            transform: translateX(-50%);
+            transform: none;
 
-            top: 370px;
+            top: auto; /* 370px */
+            left: auto;
             z-index: 10;
+            display: block;
+            margin: 0 auto 20px auto;
+            
         }
         
         /* Publications Section */
