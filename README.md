@@ -4,4 +4,21 @@
 
 ## About This Repository
 
-이 저장소는 Kwangryeol Park의 개인 웹사이트를 위한 GitHub Pages 프로젝트입니다. UNIST AI Graduate School 박사과정 학생으로서의 학술 활동, 연구 성과, 출판물 및 기술 역량을 소개하는 포트폴리오 웹사이트가 호스팅됩니다.
+This repository hosts the personal website for Kwangryeol Park, a Ph.D. candidate at UNIST AI Graduate School. The website showcases academic activities, research achievements, publications, and technical expertise in AI/ML engineering.
+
+## Contact
+
+- **Email**: [pkr7098@unist.ac.kr](mailto:pkr7098@unist.ac.kr)
+- **LinkedIn**: [Kwangryeol Park](https://www.linkedin.com/in/%EA%B4%91%EB%A0%AC-%EB%B0%95-bb416a271/)
+- **GitHub**: [KwangryeolPark](https://github.com/KwangryeolPark)
+
+## Research Interests
+
+- Time Series Forecasting
+- Anomaly Detection
+- Prognostics and Health Management (PHM)
+- Self-Supervised Learning (SSL)
+- Memory-Efficient Optimization
+- Embedded / Edge AI
+- Large Language Models (LLM)
+- Multimodal AI
