@@ -15,6 +15,37 @@
             --light-text: #666666;
             --link-hover: #e0b04c; /* Lighter Gold for hover */
             --light-gold: #d4b984; /* 연한 황금색 추가 */
+
+            /* Registered alternative palettes (not applied globally) */
+            /* Navy & Bronze */
+            --navy-bronze-primary: #243650;
+            --navy-bronze-accent: #A67C52;
+            --navy-bronze-background: #F7F6F2;
+            --navy-bronze-light-accent: #DED0BC;
+
+            /* Forest Green & Sand */
+            --forest-sand-primary: #29483F;
+            --forest-sand-accent: #B09272;
+            --forest-sand-background: #F8F7F3;
+            --forest-sand-light-accent: #DCD3C4;
+
+            /* Deep Plum & Champagne */
+            --plum-champagne-primary: #493449;
+            --plum-champagne-accent: #B49B80;
+            --plum-champagne-background: #FAF8F6;
+            --plum-champagne-light-accent: #E3D7CB;
+
+            /* Slate Blue & Copper */
+            --slate-copper-primary: #35485B;
+            --slate-copper-accent: #B47D63;
+            --slate-copper-background: #F6F7F6;
+            --slate-copper-light-accent: #E0CEC3;
+
+            /* Charcoal & Sage */
+            --charcoal-sage-primary: #343C3A;
+            --charcoal-sage-accent: #829A87;
+            --charcoal-sage-background: #F8F8F4;
+            --charcoal-sage-light-accent: #D9E2D8;
         }
 
         /* Basic Styles */
@@ -165,17 +196,17 @@
         }
         
         .skill-category h3 {
-            color: var(--primary-color);
+            color: var(--slate-copper-primary);
             font-size: 1.1em;
             margin-top: 0;
-            border-bottom: 1px dashed var(--accent-color);
+            border-bottom: 1px dashed var(--slate-copper-accent);
             padding-bottom: 5px;
         }
         
         .interest-tag {
             display: inline-block;
-            background: var(--light-gold);
-            color: var(--primary-color);
+            background: var(--charcoal-sage-light-accent);
+            color: var(--charcoal-sage-primary);
             padding: 5px 10px;
             margin: 0 8px 8px 0;
             border-radius: 4px;
@@ -261,6 +292,22 @@
             margin-top: 15px;
             padding-top: 10px;
             border-top: 1px solid #eee;
+        }
+
+        /* Education institution names: Deep Plum */
+        .education-university {
+            color: var(--plum-champagne-primary);
+        }
+
+        /* Highlight only accepted papers with Forest Green & Sand */
+        .activity-paper-accepted {
+            background-color: var(--forest-sand-background);
+            border-left: 4px solid var(--forest-sand-primary) !important;
+            border-radius: 4px;
+            padding: 8px 12px !important;
+        }
+        .activity-paper-accepted strong {
+            color: var(--forest-sand-primary) !important;
         }
     </style>
 </head>
@@ -389,7 +436,7 @@
 
         <section class="section">
             <h2>Professional Activities</h2>
-            <ul style="list-style-type: disc; margin-left: 20px; padding-left: 20px>
+            <ul style="list-style-type: disc; margin-left: 20px; padding-left: 20px;">
                 <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
                     <i>(2026)</i> - <strong style="color:var(--primary-color);">Reviewer</strong>, KDD 2027 Data & Benchmarks Track
                 </li>
@@ -399,7 +446,7 @@
                 <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
                     <i>(2026)</i> - <strong style="color:var(--primary-color);">Reviewer</strong>, FMTS 2026 (NeurIPS 2026 Workshop)
                 </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
+                <li class="activity-paper-accepted" style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
                     <i>(September 24, 2026)</i> - <strong style="color:var(--primary-color);">Paper Accepted</strong>, NeurIPS 2026, OliO: ODE-based Linear Transition Operator for Self-Supervised Time Series Forecasting
                 </li>
                 <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
@@ -426,10 +473,10 @@
                 <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
                     <i>(October 2025)</i> - <strong style="color:var(--primary-color);">Research Collaboration 1</strong>, Hyundai Motor Company <strong style="color:var(--primary-color);">[Completed]</strong>
                 </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
+                <li class="activity-paper-accepted" style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
                     <i>(September 18, 2025)</i> - <strong style="color:var(--primary-color);">Paper Accepted</strong>, NeurIPS 2025, AliO: Output Alignment Matters in Long-Term Time Series Forecasting
                 </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
+                <li class="activity-paper-accepted" style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
                     <i>(August 11, 2025)</i> - <strong style="color:var(--primary-color);">Paper Accepted</strong>, CIKM 2025 (Applied Research Track), Smart ECU: Scalable On-Vehicle Deployment of Drivetrain Fault Classification Systems for Commercial Electric Vehicles
                 </li>
                 <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
@@ -438,10 +485,10 @@
                 <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
                     <i>(February 25 - March 4, 2025)</i> - <strong style="color:var(--primary-color);">Poster Presenter</strong>, AAAI 2025 (The 39th Annual AAAI Conference on Artificial Intelligence)
                 </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
+                <li class="activity-paper-accepted" style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
                     <i>(January 22, 2025)</i> - <strong style="color:var(--primary-color);">Paper Accepted</strong>, ICLR 2025, PPT: Patch Order Do Matters In Time Series Pretext Task
                 </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
+                <li class="activity-paper-accepted" style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
                     <i>(December 9, 2024)</i> - <strong style="color:var(--primary-color);">Paper Accepted</strong>, AAAI 2025, SMMF: Square-Matricized Momentum Factorization for Memory-Efficient Optimization
                 </li>
             </ul>
@@ -481,10 +528,10 @@
         <section class="section">
             <h2>Research Interests</h2>
             <div>
-                <span class="interest-tag">Time Series Forecasting</span>
                 <span class="interest-tag">Agentic AI</span>
                 <span class="interest-tag">GUI Agentic AI</span>
-                <span class="interest-tag">Anomaly Detection</span>
+                <span class="interest-tag">Time Series Forecasting</span>
+                <span class="interest-tag">Time Series Anomaly Detection</span>
                 <span class="interest-tag">Prognostics and Health Management (PHM)</span>
                 <span class="interest-tag">Self-Supervised Learning (SSL)</span>
                 <span class="interest-tag">Memory-Efficient Optimization</span>
@@ -497,12 +544,13 @@
         <section class="section">
             <h2>Education</h2>
             <p>
-                <strong style="color:var(--primary-color);">Ulsan National Institute of Science and Technology (UNIST)</strong><br>
+                <strong class="education-university">Ulsan National Institute of Science and Technology (UNIST)</strong><br>
                 AI Graduate School (Embedded AI Lab by Seulki Lee)<br>
-                Ph.D. Candidate (Integrated M.S. & Ph.D. Program, 7th Semester) (2022 - Present)
+                Ph.D. Candidate (Integrated M.S. & Ph.D. Program, Sep. 2022 - Present)<br>
+                Currently conducting research at KAIST under the supervision of Prof. Seulki Lee.
             </p>
             <p>
-                <strong style="color:var(--primary-color);">Sangmyung University</strong><br>
+                <strong class="education-university">Sangmyung University</strong><br>
                 B.S. in Electronic Engineering (Embedded Systems Track)<br>
                 Graduated as <strong style="color:var(--primary-color);">Valedictorian</strong> <strong style="color:var(--primary-color);">(Early Graduation)</strong> (~2022)
             </p>
