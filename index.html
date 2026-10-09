@@ -6,18 +6,17 @@
     <title>Kwangryeol Park - AI/ML Engineer (UNIST)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        /* Color Variables */
+        /* Color palettes */
         :root {
-            --primary-color: #6a1b29; /* Dark Red / 붉은색 */
-            --accent-color: #ab863a; /* Golden Yellow / 황금색 */
-            --background-color: #fcfcf8; /* Light Beige / 지정된 배경색 */
+            --primary-color: #6a1b29;
+            --accent-color: #ab863a;
+            --background-color: #fcfcf8;
             --text-color: #333333;
             --light-text: #666666;
-            --link-hover: #e0b04c; /* Lighter Gold for hover */
-            --light-gold: #d4b984; /* 연한 황금색 추가 */
+            --link-hover: #e0b04c;
+            --light-gold: #d4b984;
 
-            /* Registered alternative palettes (not applied globally) */
-            /* Navy & Bronze */
+            /* Navy & Bronze (registered for future use) */
             --navy-bronze-primary: #243650;
             --navy-bronze-accent: #A67C52;
             --navy-bronze-background: #F7F6F2;
@@ -48,7 +47,11 @@
             --charcoal-sage-light-accent: #D9E2D8;
         }
 
-        /* Basic Styles */
+        /* Base styles */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--background-color);
@@ -69,41 +72,11 @@
             text-decoration: underline;
         }
 
-        /* Container and Layout */
-        .container {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-        .section:first-of-type {
-            margin-top: 0;
-        }
-        .section {
-            background: #ffffff;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-
-        h1, h2 {
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--accent-color);
-            padding-bottom: 5px;
-            margin-top: 0;
-        }
-
-        h2 {
-            font-size: 1.7em;
-            letter-spacing: 0.5px;
-            border-bottom: 2px solid var(--accent-color);
-        }
-
-        /* Header / Hero Section */
+        /* Header */
         .header {
             background-color: var(--primary-color);
             color: #ffffff;
-            padding: 40px 20px 20px 20px;
+            padding: 50px 0 100px;
             text-align: center;
             border-bottom: 5px solid var(--accent-color);
             position: relative;
@@ -112,8 +85,8 @@
         .header h1 {
             color: #ffffff;
             font-size: 2.8em;
-            margin-bottom: 5px;
-            border-bottom: none;
+            margin: 0 0 5px;
+            padding-bottom: 5px;
         }
 
         .header p {
@@ -127,34 +100,75 @@
             display: block;
             font-size: 1.1em;
         }
-        
+
         .contact-info a:hover {
             color: var(--accent-color);
             text-decoration: none;
         }
 
-        /* Profile Image */
+        .divider {
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
         .profile-pic {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid var(--accent-color);
-            margin-top: -100px; /* Pulls image up over header */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             position: relative;
-            left: 50%;
-            transform: none;
-
-            top: auto; /* 370px */
-            left: auto;
             z-index: 10;
             display: block;
-            margin: 0 auto 20px auto;
-            
+            margin: 0 auto 20px;
         }
-        
-        /* Publications Section */
+
+        /* Main layout and sections */
+        .page-layout {
+            max-width: 1450px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 200px minmax(0, 1fr);
+            gap: 25px;
+            align-items: start;
+        }
+
+        .page-layout .container {
+            grid-column: 2;
+            width: 100%;
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .section {
+            background: #ffffff;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .section[id] {
+            scroll-margin-top: 25px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.7em;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+
+        /* Publications */
         .publication-list {
             list-style: none;
             padding: 0;
@@ -174,27 +188,101 @@
             margin-bottom: 5px;
         }
 
+        .publication-list a.title {
+            text-decoration: none;
+        }
+
+        .publication-list a.title:hover {
+            color: var(--link-hover);
+            text-decoration: none;
+        }
+
         .publication-list .journal {
             color: var(--light-text);
             font-style: italic;
         }
 
+        .publication-list .authors {
+            display: block;
+            font-size: 0.95em;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+
+        .publication-list .me {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
         .publication-list img.paper-image {
             width: 100%;
-            max-width: 200px; /* Adjust size */
+            max-width: 500px;
             height: auto;
             border: 1px solid #ddd;
             border-radius: 4px;
             margin-top: 10px;
         }
-        
-        /* Skills and Interests */
+
+        .publication-list .bullet-summary {
+            list-style: disc;
+            margin-top: 10px;
+            margin-left: 20px;
+            padding-left: 0;
+        }
+
+        .publication-list .bullet-summary li {
+            margin-bottom: 5px;
+            padding-left: 0;
+            border-left: none;
+            font-size: 0.95em;
+        }
+
+        .sup {
+            font-size: 0.75em;
+            vertical-align: super;
+            margin-left: 1px;
+        }
+
+        .pub-footnote {
+            font-size: 0.85em;
+            color: var(--light-text);
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        /* Activities */
+        .activity-list {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+
+        .activity-entry {
+            border-left: none;
+            padding-left: 0;
+            margin-bottom: 5px;
+            font-size: 1em;
+        }
+
+        .activity-paper-accepted {
+            background-color: var(--forest-sand-background);
+            border-left: 4px solid var(--forest-sand-primary);
+            border-radius: 4px;
+            padding: 8px 12px;
+        }
+
+        .activity-paper-accepted strong {
+            color: var(--forest-sand-primary) !important;
+        }
+
+        /* Skills and research interests */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
         }
-        
+
         .skill-category h3 {
             color: var(--slate-copper-primary);
             font-size: 1.1em;
@@ -202,7 +290,7 @@
             border-bottom: 1px dashed var(--slate-copper-accent);
             padding-bottom: 5px;
         }
-        
+
         .interest-tag {
             display: inline-block;
             background: var(--charcoal-sage-light-accent);
@@ -213,354 +301,600 @@
             font-size: 0.9em;
             font-weight: bold;
         }
-        
-        /* Footer */
+
+        /* Education and footer */
+        .education-university {
+            color: var(--plum-champagne-primary);
+        }
+
         .footer {
             text-align: center;
             padding: 20px 0;
             color: var(--light-text);
             font-size: 0.9em;
         }
-        /* Publications Section 내 개조식 스타일 */
-        .publication-list .bullet-summary {
-            list-style: disc; /* 채워진 원 모양으로 변경 */
-            margin-top: 10px;
-            margin-left: 20px;
-            padding-left: 0;
-        }
-        .publication-list a.title { /* a.title로 명확히 지정 */
-            font-weight: bold;
-            color: var(--accent-color);
-            font-size: 1.1em;
-            display: block;
-            margin-bottom: 5px;
-            text-decoration: none; /* 기본 밑줄 제거 */
-        }
-        
-        .publication-list a.title:hover {
-            color: var(--link-hover);
-            text-decoration: underline; /* 호버 시에만 밑줄 표시 */
-        }
-        .publication-list .bullet-summary li {
-            /* 개별 리스트 아이템의 여백 조정 */
-            margin-bottom: 5px;
-            padding-left: 0;
-            border-left: none; /* 기존 li의 세로줄 제거 */
-            font-size: 0.95em;
-        }/* Header / Hero Section 내 구분선 스타일 */
-        .divider {
-            width: 80px; /* 막대 길이 */
-            height: 3px; /* 막대 두께 */
-            background-color: var(--accent-color); /* 황금색 */
-            margin: 15px auto; /* 위아래 여백을 주어 텍스트와 분리 */
-            border-radius: 2px;
-        }
-    
-        /* Header / Hero Section */
-        .header {
-            /* ... 기존 스타일 유지 ... */
-            padding: 50px 0 100px 0;
-            text-align: center;
-            border-bottom: 5px solid var(--accent-color);
-            position: relative;
-        }
-        /* 저자 목록 스타일 */
-        .publication-list .authors {
-            display: block;
-            font-size: 0.95em;
-            margin-bottom: 5px;
-            color: var(--text-color);
-        }
-        
-        /* 본인 이름 강조 (Primary Color) */
-        .publication-list .me {
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-        
-        /* 기호 스타일 (위첨자) */
-        .sup {
-            font-size: 0.75em;
-            vertical-align: super;
-            margin-left: 1px;
-        }
-        
-        /* 하단 각주 스타일 */
-        .pub-footnote {
-            font-size: 0.85em;
-            color: var(--light-text);
-            margin-top: 15px;
-            padding-top: 10px;
-            border-top: 1px solid #eee;
+
+        /* Fixed table-of-contents sidebar: Deep Plum & Champagne */
+        .side-toc {
+            position: fixed;
+            top: 50%;
+            left: max(20px, calc((100vw - 1490px) / 2 + 20px));
+            transform: translateY(-50%);
+            width: 200px;
+            box-sizing: border-box;
+            max-height: calc(100vh - 50px);
+            overflow-y: auto;
+            background: var(--plum-champagne-background);
+            border-radius: 8px;
+            border-top: 3px solid var(--plum-champagne-accent);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            padding: 20px 14px;
         }
 
-        /* Education institution names: Deep Plum */
-        .education-university {
+        .toc-heading {
+            font-size: 0.8em;
+            font-weight: bold;
+            letter-spacing: 1.5px;
             color: var(--plum-champagne-primary);
+            margin: 0 0 15px 10px;
         }
 
-        /* Highlight only accepted papers with Forest Green & Sand */
-        .activity-paper-accepted {
-            background-color: var(--forest-sand-background);
-            border-left: 4px solid var(--forest-sand-primary) !important;
-            border-radius: 4px;
-            padding: 8px 12px !important;
+        .side-toc a {
+            display: block;
+            padding: 9px 10px;
+            color: var(--plum-champagne-primary);
+            font-size: 0.88em;
+            border-left: 3px solid transparent;
+            border-radius: 3px;
+            text-decoration: none;
+            transition: all 0.2s ease;
         }
-        .activity-paper-accepted strong {
-            color: var(--forest-sand-primary) !important;
+
+        .side-toc a:hover,
+        .side-toc a:focus-visible {
+            color: var(--plum-champagne-light-accent);
+            background: var(--plum-champagne-primary);
+            border-left-color: var(--plum-champagne-accent);
+            text-decoration: none;
+        }
+
+        /* Mobile: horizontal sticky table of contents */
+        @media (max-width: 900px) {
+            .page-layout {
+                display: block;
+                margin-top: 0;
+                padding: 0 12px;
+            }
+
+            .side-toc {
+                position: sticky;
+                top: 0;
+                left: auto;
+                transform: none;
+                width: auto;
+                display: flex;
+                gap: 4px;
+                z-index: 50;
+                max-height: none;
+                overflow-x: auto;
+                white-space: nowrap;
+                margin-bottom: 15px;
+                padding: 8px;
+                border-top: none;
+                border-bottom: 2px solid var(--plum-champagne-accent);
+            }
+
+            .toc-heading {
+                display: none;
+            }
+
+            .side-toc a {
+                flex-shrink: 0;
+                font-size: 0.8em;
+                padding: 8px;
+                border-left: none;
+            }
+
+            .section[id] {
+                scroll-margin-top: 75px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
+    <header class="header" id="home">
+
         <h1>Kwangryeol Park</h1>
+
         <p>Ph.D. Candidate (8th Semester [2026]) at UNIST AI Graduate School</p>
+
         <div class="divider"></div>
+
         <div class="contact-info">
+
             <a href="mailto:pkr7098@unist.ac.kr"><i class="fa-solid fa-envelope"></i> pkr7098@unist.ac.kr</a>
+
             <a href="https://github.com/KwangryeolPark"><i class="fa-brands fa-square-github"></i> GitHub</a>
+
             <a href="https://www.linkedin.com/in/%EA%B4%91%EB%A0%AC-%EB%B0%95-bb416a271/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+
         </div>
+
     </header>
 
-        <img src="figures/profile-placeholder.jpg" alt="Profile Picture" class="profile-pic"> 
-    <div class="container">
-        
-        <section class="section">
-            <h2>Summary</h2>
-            <p>
-                Highly accomplished AI/ML Engineer with a proven track record in developing robust and memory-efficient solutions for Time Series Analysis and Embedded AI systems. My research focuses on enhancing the reliability and performance of Deep Learning models, evidenced by four publications accepted at top-tier conferences (NeurIPS, ICLR, CIKM, AAAI) during my Ph.D. program. Expertise includes Time Series Forecasting, Self-Supervised Learning, Model Optimization, and practical C/C++ deployment on resource-constrained hardware.
-            </p>
-        </section>
+    <img src="figures/profile-placeholder.jpg" alt="Profile Picture" class="profile-pic">
 
-        <section class="section">
-            <h2>Publications</h2>
-            <ul class="publication-list">
-                
-                <li>
-                    <a href="https://openreview.net/forum?id=AuOZDp4gy7" class="title" style="text-decoration: none;">AliO: Output Alignment Matters in Long-Term Time Series Forecasing</a>
-                    <span class="journal">NeurIPS 2025 (Poster)</span>
-                    <span class="authors">
-                        Authors: <span class="me">Kwangryeol Park</span>, Jaeho Kim, Seulki Lee<span class="sup">*</span>
-                    </span>
-                    <ul class="bullet-summary">
-                        <li><a href="https://youtu.be/dennqibYeNo?si=zKCoyGKlKepOweWO" style="color:var(--primary-color);">
-                            <i class="fab fa-youtube"></i> AliO YouTube (Generated by NotebookLM): Link</a></li>
-                        <li><a href="https://neurips.cc/virtual/2025/loc/san-diego/poster/119426" style="color:var(--primary-color);"><i class="fa-solid fa-blog"></i> AliO NeurIPS Poster: Link</a></li>
-                        <li><strong style="color:var(--primary-color);">Problem Identification:</strong> Solved the critical <strong style="color:var(--primary-color);">Output Alignment Problem</strong> in Long-Term Time Series Forecasting (LTSF), where predictions lack consistency across lagged inputs.</li>
-                        <li><strong style="color:var(--primary-color);">Methodology:</strong> Developed <strong style="color:var(--primary-color);">AliO (Align Outputs)</strong>, a novel loss function that ensures prediction consistency in both <strong style="color:var(--primary-color);">time and frequency domains</strong>.</li>
-                        <li><strong style="color:var(--primary-color);">Key Metric:</strong> Proposed the <strong style="color:var(--primary-color);">Time Alignment Metric (TAM)</strong> to quantitatively measure prediction consistency and data-model robustness, a factor previously unaddressed by MSE.</li>
-                        <li><strong style="color:var(--primary-color);">Performance Highlights:</strong> Achieved substantial performance gains across LTSF models:
-                            <ul>
-                                <li>MSE Improvement: Up to <strong style="color:var(--primary-color);">27.5%</strong></li>
-                                <li>TAM Improvement: Up to <strong style="color:var(--primary-color);">58.2%</strong></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    
-                    <img src="figures/paper-thumbnails/alio-image.png" alt="AliO Figure 1" class="paper-image" style="max-width: 500px;">
-                </li>
-                <li>
-                    <a href="https://openreview.net/forum?id=7zwIEbSTDy" class="title" style="text-decoration: none;">PPT: Patch Order Do Matters In Time Series Pretext Task</a>
-                    <span class="journal">ICLR 2025 (Poster)</span>
-                    <span class="authors">
-                        Authors: <span class="me">Kwangryeol Park</span><span class="sup">†</span>, Jaeho Kim<span class="sup">†</span>, Sukmin Yun, Seulki Lee<span class="sup">*</span>
-                    </span>
-                    <ul class="bullet-summary">
-                        <li><strong style="color:var(--primary-color);">Problem Identification:</strong> Identified that existing patch-based models often fail to capture essential <strong style="color:var(--primary-color);">time- and channel-wise patch order dependencies</strong> in time series data.</li>
-                        <li><strong style="color:var(--primary-color);">Methodology:</strong> Introduced <strong style="color:var(--primary-color);">PPT (Patch order-aware Pretext Task)</strong>, a novel self-supervised learning task that exploits intrinsic sequential order information through <strong style="color:var(--primary-color);">channel-wise patch permutations</strong>.</li>
-                        <li><strong style="color:var(--primary-color);">Key Components:</strong> Proposed two core learning methods: <strong style="color:var(--primary-color);">Patch Order Consistency Learning</strong> (quantifies correctness) and <strong style="color:var(--primary-color);">Contrastive Learning</strong> (distinguishes permutation strength).</li>
-                        <li><strong style="color:var(--primary-color);">Key Metric:</strong> Proposed <strong style="color:var(--primary-color);">ACF-COS</strong> (Autocorrelation Function with Cosine Similarity), a metric to quantify the "orderness" of a time series dataset.</li>
-                        <li><strong style="color:var(--primary-color);">Performance Highlights:</strong> Enhanced model performance over mask-based learning by:
-                            <ul>
-                                <li>Supervised Task: Improving up to <strong style="color:var(--primary-color);">7% accuracy</strong> for cardiogram tasks.</li>
-                                <li>Self-Supervised Task: Outperforming mask-based learning by <strong style="color:var(--primary-color);">5%</strong> in human activity recognition.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    
-                    <img src="figures/paper-thumbnails/ppt-image.png" alt="PPT Figure 1" class="paper-image" style="max-width: 500px;">
-                </li>
-                <li>
-                    <span class="title">Smart ECU: Scalable On-Vehicle Deployment of Drivetrain Fault Classification Systems for Commercial Electric Vehicles</span>
-                    <span class="journal">CIKM 2025 (Oral)</span>
-                    <span class="authors">
-                        Authors: <span class="me">Kwangryeol Park</span><span class="sup">†</span>, Jaeho Kim<span class="sup">†</span>, Kyu Hwan Lee<span class="sup">†</span>, Jeongmin Oh, Dongjin Park, Hyunseok Oh, Youngrock Chung, Kyung-Woo Lee, Dae-Un Sung, Seulki Lee<span class="sup">*</span>
-                    </span>
-                    <ul class="bullet-summary">
-                        <li><a href="https://www.youtube.com/watch?v=FaoQolxorrA" style="color:var(--primary-color);">
-                            <i class="fab fa-youtube"></i> SmartECU Presentation Video: Link</a></li>
-                        <li><strong style="color:var(--primary-color);">Goal:</strong> Presented Smart ECU, the <strong style="color:var(--primary-color);">first on-vehicle drivetrain fault classification solution</strong> for motor-reducers on commercial EVs, designed for scalable mass production.</li>
-                        <li><strong style="color:var(--primary-color);">Data:</strong> Collected authentic fault and normal vibration data from <strong style="color:var(--primary-color);">seven different EV models</strong> (e.g., Hyundai IONIQ 5, KIA EV6) and over 19 drivetrains under diverse real-world driving conditions.</li>
-                        <li><strong style="color:var(--primary-color);">Deployment Challenge:</strong> Addressed the challenge of deploying on <strong style="color:var(--primary-color);">extremely resource-constrained ECU</strong> environments, facilitating Progonstic and Health Management (PHM) solutions on commercial EVs.</li>
-                        <li><strong style="color:var(--primary-color);">Efficiency & Results:</strong> Achieved strong efficiency and performance:
-                            <ul>
-                                <li>Model Size: Required only <strong style="color:var(--primary-color);">3.28 MB of memory</strong>, a <strong style="color:var(--primary-color);">99.24% reduction</strong> compared to prior cloud-based methods.</li>
-                                <li>Generalizability: Demonstrated <strong style="color:var(--primary-color);">strong generalization performance</strong> in both intra-car (same vehicle type) and inter-car (different vehicle types) evaluations.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    
-                    <img src="figures/paper-thumbnails/smart-ecu-image.png" alt="Smart ECU Figure 1" class="paper-image" style="max-width: 500px;">
-                </li>
-                <li>
-                    <a href="https://ojs.aaai.org/index.php/AAAI/article/view/34186" class="title" style="text-decoration: none;">SMMF: Square-Matricized Momentum Factorization for Memory-Efficient Optimization</a>
-                    <span class="journal">AAAI 2025 (Poster)</span>
-                    <span class="authors">
-                        Authors: <span class="me">Kwangryeol Park</span>, Seulki Lee<span class="sup">*</span>
-                    </span>
-                    <ul class="bullet-summary">
-                        <li><a href="https://youtu.be/mxDH4D4622I?si=avndLKg_OZHldR69" style="color:var(--primary-color);">
-                            <i class="fab fa-youtube"></i> SMMF YouTube: Link</a></li>
-                        <li><strong style="color:var(--primary-color);">Problem Solved:</strong> Addressed the high memory consumption of widely-used adaptive optimizers (e.g., Adam) in training large-scale Deep Learning models.</li>
-                        <li><strong style="color:var(--primary-color);">Methodology:</strong> Proposed <strong style="color:var(--primary-color);">SMMF (Square-Matricized Momentum Factorization)</strong>, a novel method utilizing a <strong style="color:var(--primary-color);">square-matricization and one-time single matrix factorization</strong> scheme.</li>
-                        <li><strong style="color:var(--primary-color);">Key Advantage:</strong> Enables flexible and efficient factorization of momentum tensors regardless of their arbitrary rank (shape), making it applicable to all layers (Linear, CNN, Transformer).</li>
-                        <li><strong style="color:var(--primary-color);">Theoretical Foundation:</strong> Provided a <strong style="color:var(--primary-color);">regret bound analysis</strong> to theoretically confirm that SMMF converges comparably to non-memory-efficient adaptive optimizers.</li>
-                        <li><strong style="color:var(--primary-color);">Performance Highlights:</strong> Achieved state-of-the-art memory efficiency:
-                            <ul>
-                                <li>Memory Reduction: Reduced the memory requirement by up to <strong style="color:var(--primary-color);">96%</strong> compared to standard adaptive optimizers.</li>
-                                <li>Competitive Performance: Maintained competitive optimization capability across various benchmarks (e.g., ResNet50 on ImageNet).</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    
-                    <img src="figures/paper-thumbnails/smmf-image.png" alt="SMMF Algorithm 1" class="paper-image" style="max-width: 500px;">
-                </li>
-            </ul>
-            <div class="pub-footnote">
-                <span class="sup">†</span> Equal contribution &nbsp;&nbsp;
-                <span class="sup">*</span> Corresponding author
-            </div>
-        </section>
+    <div class="page-layout">
 
-        <section class="section">
-            <h2>Professional Activities</h2>
-            <ul style="list-style-type: disc; margin-left: 20px; padding-left: 20px;">
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(2026)</i> - <strong style="color:var(--primary-color);">Reviewer</strong>, KDD 2027 Data & Benchmarks Track
-                </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(2026)</i> - <strong style="color:var(--primary-color);">Reviewer</strong>, NeurIPS 2026 Main Track
-                </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(2026)</i> - <strong style="color:var(--primary-color);">Reviewer</strong>, FMTS 2026 (NeurIPS 2026 Workshop)
-                </li>
-                <li class="activity-paper-accepted" style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(September 24, 2026)</i> - <strong style="color:var(--primary-color);">Paper Accepted</strong>, NeurIPS 2026, OliO: ODE-based Linear Transition Operator for Self-Supervised Time Series Forecasting
-                </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(April 2026~)</i> - <strong style="color:var(--primary-color);">Research Collaboration 3</strong>, Hyundai Motor Company <strong style="color:var(--primary-color);">[Ongoing]</strong>
-                </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(April 2026~)</i> - <strong style="color:var(--primary-color);">Research Collaboration 2</strong>, Hyundai Motor Company <strong style="color:var(--primary-color);">[Ongoing]</strong>
-                </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(December 1-7, 2025)</i> - <strong style="color:var(--primary-color);">Poster Presenter</strong>, NeurIPS 2025 (Conference on Neural Information Processing Systems), San Diego, USA (AliO)
-                </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(November 25, 2025)</i> - <a href="https://github.com/KwangryeolPark/conference-deadlines"><strong style="color:var(--primary-color);">[Project] Conference Deadline Tracker</strong>, Local web server project <i class="fa-brands fa-github"; style="color:var(--primary-color);"></i>, <strong style="color:var(--primary-color);">[Project Completed]</strong></a>
-                </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(November 20, 2025)</i> - <strong style="color:var(--primary-color);">Poster Presenter</strong>, JKAIA 2025 (Joint Korean Artificial Intelligence Association)
-                </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(November 11, 2025)</i> - <strong style="color:var(--primary-color);">Session Chair</strong>, CIKM 2025 (ACM International Conference on Information and Knowledge Management)
-                </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(November 10-14, 2025)</i> - <strong style="color:var(--primary-color);">Paper Presenter (Oral)</strong>, CIKM 2025 (Smart ECU)
-                </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(October 2025)</i> - <strong style="color:var(--primary-color);">Research Collaboration 1</strong>, Hyundai Motor Company <strong style="color:var(--primary-color);">[Completed]</strong>
-                </li>
-                <li class="activity-paper-accepted" style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(September 18, 2025)</i> - <strong style="color:var(--primary-color);">Paper Accepted</strong>, NeurIPS 2025, AliO: Output Alignment Matters in Long-Term Time Series Forecasting
-                </li>
-                <li class="activity-paper-accepted" style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(August 11, 2025)</i> - <strong style="color:var(--primary-color);">Paper Accepted</strong>, CIKM 2025 (Applied Research Track), Smart ECU: Scalable On-Vehicle Deployment of Drivetrain Fault Classification Systems for Commercial Electric Vehicles
-                </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(April 24-28, 2025)</i> - <strong style="color:var(--primary-color);">Poster Presenter</strong>, ICLR 2025 (International Conference on Learning Representations)
-                </li>
-                <li style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(February 25 - March 4, 2025)</i> - <strong style="color:var(--primary-color);">Poster Presenter</strong>, AAAI 2025 (The 39th Annual AAAI Conference on Artificial Intelligence)
-                </li>
-                <li class="activity-paper-accepted" style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(January 22, 2025)</i> - <strong style="color:var(--primary-color);">Paper Accepted</strong>, ICLR 2025, PPT: Patch Order Do Matters In Time Series Pretext Task
-                </li>
-                <li class="activity-paper-accepted" style="border-left: none; padding-left: 0; margin-bottom: 5px; font-size: 1em;">
-                    <i>(December 9, 2024)</i> - <strong style="color:var(--primary-color);">Paper Accepted</strong>, AAAI 2025, SMMF: Square-Matricized Momentum Factorization for Memory-Efficient Optimization
-                </li>
-            </ul>
-        </section>
-        
-        <section class="section">
-            <h2>Technical Skills & Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Core ML/DL & Data Science</h3>
-                    <ul>
-                        <li>PyTorch (Expert)</li>
-                        <li>TensorFlow</li>
-                        <li>Python (Pandas, NumPy, Scikit-learn)</li>
-                    </ul>
+        <nav class="side-toc" aria-label="Table of Contents">
+
+            <div class="toc-heading">CONTENTS</div>
+
+            <a href="#home">Home</a>
+
+            <a href="#summary">Summary</a>
+
+            <a href="#publications">Publications</a>
+
+            <a href="#activities">Professional Activities</a>
+
+            <a href="#skills">Technical Skills & Expertise</a>
+
+            <a href="#interests">Research Interests</a>
+
+            <a href="#education">Education</a>
+
+        </nav>
+
+        <div class="container">
+
+            <section class="section" id="summary">
+
+                <h2>Summary</h2>
+
+                <p>
+
+                    Highly accomplished AI/ML Engineer with a proven track record in developing robust and memory-efficient solutions for Time Series Analysis and Embedded AI systems. My research focuses on enhancing the reliability and performance of Deep Learning models, evidenced by four publications accepted at top-tier conferences (NeurIPS, ICLR, CIKM, AAAI) during my Ph.D. program. Expertise includes Time Series Forecasting, Self-Supervised Learning, Model Optimization, and practical C/C++ deployment on resource-constrained hardware.
+
+                </p>
+
+            </section>
+
+            <section class="section" id="publications">
+
+                <h2>Publications</h2>
+
+                <ul class="publication-list">
+
+                    <li>
+
+                        <a href="https://openreview.net/forum?id=AuOZDp4gy7" class="title">AliO: Output Alignment Matters in Long-Term Time Series Forecasing</a>
+
+                        <span class="journal">NeurIPS 2025 (Poster)</span>
+
+                        <span class="authors">
+
+                            Authors: <span class="me">Kwangryeol Park</span>, Jaeho Kim, Seulki Lee<span class="sup">*</span>
+
+                        </span>
+
+                        <ul class="bullet-summary">
+
+                            <li><a href="https://youtu.be/dennqibYeNo?si=zKCoyGKlKepOweWO" style="color:var(--primary-color);">
+
+                                <i class="fab fa-youtube"></i> AliO YouTube (Generated by NotebookLM): Link</a></li>
+
+                            <li><a href="https://neurips.cc/virtual/2025/loc/san-diego/poster/119426" style="color:var(--primary-color);"><i class="fa-solid fa-blog"></i> AliO NeurIPS Poster: Link</a></li>
+
+                            <li><strong style="color:var(--primary-color);">Problem Identification:</strong> Solved the critical <strong style="color:var(--primary-color);">Output Alignment Problem</strong> in Long-Term Time Series Forecasting (LTSF), where predictions lack consistency across lagged inputs.</li>
+
+                            <li><strong style="color:var(--primary-color);">Methodology:</strong> Developed <strong style="color:var(--primary-color);">AliO (Align Outputs)</strong>, a novel loss function that ensures prediction consistency in both <strong style="color:var(--primary-color);">time and frequency domains</strong>.</li>
+
+                            <li><strong style="color:var(--primary-color);">Key Metric:</strong> Proposed the <strong style="color:var(--primary-color);">Time Alignment Metric (TAM)</strong> to quantitatively measure prediction consistency and data-model robustness, a factor previously unaddressed by MSE.</li>
+
+                            <li><strong style="color:var(--primary-color);">Performance Highlights:</strong> Achieved substantial performance gains across LTSF models:
+
+                                <ul>
+
+                                    <li>MSE Improvement: Up to <strong style="color:var(--primary-color);">27.5%</strong></li>
+
+                                    <li>TAM Improvement: Up to <strong style="color:var(--primary-color);">58.2%</strong></li>
+
+                                </ul>
+
+                            </li>
+
+                        </ul>
+
+                        <img src="figures/paper-thumbnails/alio-image.png" alt="AliO Figure 1" class="paper-image">
+
+                    </li>
+
+                    <li>
+
+                        <a href="https://openreview.net/forum?id=7zwIEbSTDy" class="title">PPT: Patch Order Do Matters In Time Series Pretext Task</a>
+
+                        <span class="journal">ICLR 2025 (Poster)</span>
+
+                        <span class="authors">
+
+                            Authors: <span class="me">Kwangryeol Park</span><span class="sup">†</span>, Jaeho Kim<span class="sup">†</span>, Sukmin Yun, Seulki Lee<span class="sup">*</span>
+
+                        </span>
+
+                        <ul class="bullet-summary">
+
+                            <li><strong style="color:var(--primary-color);">Problem Identification:</strong> Identified that existing patch-based models often fail to capture essential <strong style="color:var(--primary-color);">time- and channel-wise patch order dependencies</strong> in time series data.</li>
+
+                            <li><strong style="color:var(--primary-color);">Methodology:</strong> Introduced <strong style="color:var(--primary-color);">PPT (Patch order-aware Pretext Task)</strong>, a novel self-supervised learning task that exploits intrinsic sequential order information through <strong style="color:var(--primary-color);">channel-wise patch permutations</strong>.</li>
+
+                            <li><strong style="color:var(--primary-color);">Key Components:</strong> Proposed two core learning methods: <strong style="color:var(--primary-color);">Patch Order Consistency Learning</strong> (quantifies correctness) and <strong style="color:var(--primary-color);">Contrastive Learning</strong> (distinguishes permutation strength).</li>
+
+                            <li><strong style="color:var(--primary-color);">Key Metric:</strong> Proposed <strong style="color:var(--primary-color);">ACF-COS</strong> (Autocorrelation Function with Cosine Similarity), a metric to quantify the "orderness" of a time series dataset.</li>
+
+                            <li><strong style="color:var(--primary-color);">Performance Highlights:</strong> Enhanced model performance over mask-based learning by:
+
+                                <ul>
+
+                                    <li>Supervised Task: Improving up to <strong style="color:var(--primary-color);">7% accuracy</strong> for cardiogram tasks.</li>
+
+                                    <li>Self-Supervised Task: Outperforming mask-based learning by <strong style="color:var(--primary-color);">5%</strong> in human activity recognition.</li>
+
+                                </ul>
+
+                            </li>
+
+                        </ul>
+
+                        <img src="figures/paper-thumbnails/ppt-image.png" alt="PPT Figure 1" class="paper-image">
+
+                    </li>
+
+                    <li>
+
+                        <span class="title">Smart ECU: Scalable On-Vehicle Deployment of Drivetrain Fault Classification Systems for Commercial Electric Vehicles</span>
+
+                        <span class="journal">CIKM 2025 (Oral)</span>
+
+                        <span class="authors">
+
+                            Authors: <span class="me">Kwangryeol Park</span><span class="sup">†</span>, Jaeho Kim<span class="sup">†</span>, Kyu Hwan Lee<span class="sup">†</span>, Jeongmin Oh, Dongjin Park, Hyunseok Oh, Youngrock Chung, Kyung-Woo Lee, Dae-Un Sung, Seulki Lee<span class="sup">*</span>
+
+                        </span>
+
+                        <ul class="bullet-summary">
+
+                            <li><a href="https://www.youtube.com/watch?v=FaoQolxorrA" style="color:var(--primary-color);">
+
+                                <i class="fab fa-youtube"></i> SmartECU Presentation Video: Link</a></li>
+
+                            <li><strong style="color:var(--primary-color);">Goal:</strong> Presented Smart ECU, the <strong style="color:var(--primary-color);">first on-vehicle drivetrain fault classification solution</strong> for motor-reducers on commercial EVs, designed for scalable mass production.</li>
+
+                            <li><strong style="color:var(--primary-color);">Data:</strong> Collected authentic fault and normal vibration data from <strong style="color:var(--primary-color);">seven different EV models</strong> (e.g., Hyundai IONIQ 5, KIA EV6) and over 19 drivetrains under diverse real-world driving conditions.</li>
+
+                            <li><strong style="color:var(--primary-color);">Deployment Challenge:</strong> Addressed the challenge of deploying on <strong style="color:var(--primary-color);">extremely resource-constrained ECU</strong> environments, facilitating Progonstic and Health Management (PHM) solutions on commercial EVs.</li>
+
+                            <li><strong style="color:var(--primary-color);">Efficiency & Results:</strong> Achieved strong efficiency and performance:
+
+                                <ul>
+
+                                    <li>Model Size: Required only <strong style="color:var(--primary-color);">3.28 MB of memory</strong>, a <strong style="color:var(--primary-color);">99.24% reduction</strong> compared to prior cloud-based methods.</li>
+
+                                    <li>Generalizability: Demonstrated <strong style="color:var(--primary-color);">strong generalization performance</strong> in both intra-car (same vehicle type) and inter-car (different vehicle types) evaluations.</li>
+
+                                </ul>
+
+                            </li>
+
+                        </ul>
+
+                        <img src="figures/paper-thumbnails/smart-ecu-image.png" alt="Smart ECU Figure 1" class="paper-image">
+
+                    </li>
+
+                    <li>
+
+                        <a href="https://ojs.aaai.org/index.php/AAAI/article/view/34186" class="title">SMMF: Square-Matricized Momentum Factorization for Memory-Efficient Optimization</a>
+
+                        <span class="journal">AAAI 2025 (Poster)</span>
+
+                        <span class="authors">
+
+                            Authors: <span class="me">Kwangryeol Park</span>, Seulki Lee<span class="sup">*</span>
+
+                        </span>
+
+                        <ul class="bullet-summary">
+
+                            <li><a href="https://youtu.be/mxDH4D4622I?si=avndLKg_OZHldR69" style="color:var(--primary-color);">
+
+                                <i class="fab fa-youtube"></i> SMMF YouTube: Link</a></li>
+
+                            <li><strong style="color:var(--primary-color);">Problem Solved:</strong> Addressed the high memory consumption of widely-used adaptive optimizers (e.g., Adam) in training large-scale Deep Learning models.</li>
+
+                            <li><strong style="color:var(--primary-color);">Methodology:</strong> Proposed <strong style="color:var(--primary-color);">SMMF (Square-Matricized Momentum Factorization)</strong>, a novel method utilizing a <strong style="color:var(--primary-color);">square-matricization and one-time single matrix factorization</strong> scheme.</li>
+
+                            <li><strong style="color:var(--primary-color);">Key Advantage:</strong> Enables flexible and efficient factorization of momentum tensors regardless of their arbitrary rank (shape), making it applicable to all layers (Linear, CNN, Transformer).</li>
+
+                            <li><strong style="color:var(--primary-color);">Theoretical Foundation:</strong> Provided a <strong style="color:var(--primary-color);">regret bound analysis</strong> to theoretically confirm that SMMF converges comparably to non-memory-efficient adaptive optimizers.</li>
+
+                            <li><strong style="color:var(--primary-color);">Performance Highlights:</strong> Achieved state-of-the-art memory efficiency:
+
+                                <ul>
+
+                                    <li>Memory Reduction: Reduced the memory requirement by up to <strong style="color:var(--primary-color);">96%</strong> compared to standard adaptive optimizers.</li>
+
+                                    <li>Competitive Performance: Maintained competitive optimization capability across various benchmarks (e.g., ResNet50 on ImageNet).</li>
+
+                                </ul>
+
+                            </li>
+
+                        </ul>
+
+                        <img src="figures/paper-thumbnails/smmf-image.png" alt="SMMF Algorithm 1" class="paper-image">
+
+                    </li>
+
+                </ul>
+
+                <div class="pub-footnote">
+
+                    <span class="sup">†</span> Equal contribution &nbsp;&nbsp;
+
+                    <span class="sup">*</span> Corresponding author
+
                 </div>
-                <div class="skill-category">
-                    <h3>Embedded Systems & Deployment</h3>
-                    <ul>
-                        <li>C/C++</li>
-                        <li>ARM (STM32, Microcontrollers)</li>
-                        <li>Linux, Docker (Deployment)</li>
-                        <li>Octave, Arduino, Expressif</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Development</h3>
-                    <ul>
-                        <li>Visual Studio, Android Studio</li>
-                        <li>GitHub (Primary Version Control)</li>
-                        <li>HTML, CSS, Flutter (Web/Mobile)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section">
-            <h2>Research Interests</h2>
-            <div>
-                <span class="interest-tag">Agentic AI</span>
-                <span class="interest-tag">GUI Agentic AI</span>
-                <span class="interest-tag">Time Series Forecasting</span>
-                <span class="interest-tag">Time Series Anomaly Detection</span>
-                <span class="interest-tag">Prognostics and Health Management (PHM)</span>
-                <span class="interest-tag">Self-Supervised Learning (SSL)</span>
-                <span class="interest-tag">Memory-Efficient Optimization</span>
-                <span class="interest-tag">Embedded / Edge AI</span>
-                <span class="interest-tag">Large Language Models (LLM)</span>
-                <span class="interest-tag">Multimodal AI</span>
-            </div>
-        </section>
 
-        <section class="section">
-            <h2>Education</h2>
-            <p>
-                <strong class="education-university">Ulsan National Institute of Science and Technology (UNIST)</strong><br>
-                AI Graduate School (Embedded AI Lab by Seulki Lee)<br>
-                Ph.D. Candidate (Integrated M.S. & Ph.D. Program, Sep. 2022 - Present)<br>
-                Currently conducting research at KAIST under the supervision of Prof. Seulki Lee.
-            </p>
-            <p>
-                <strong class="education-university">Sangmyung University</strong><br>
-                B.S. in Electronic Engineering (Embedded Systems Track)<br>
-                Graduated as <strong style="color:var(--primary-color);">Valedictorian</strong> <strong style="color:var(--primary-color);">(Early Graduation)</strong> (~2022)
-            </p>
-        </section>
+            </section>
 
-    </div>
-    
+            <section class="section" id="activities">
+
+                <h2>Professional Activities</h2>
+
+                <ul class="activity-list">
+
+                    <li class="activity-entry">
+
+                        <i>(2026)</i> - <strong style="color:var(--primary-color);">Reviewer</strong>, KDD 2027 Data & Benchmarks Track
+
+                    </li>
+
+                    <li class="activity-entry">
+
+                        <i>(2026)</i> - <strong style="color:var(--primary-color);">Reviewer</strong>, NeurIPS 2026 Main Track
+
+                    </li>
+
+                    <li class="activity-entry">
+
+                        <i>(2026)</i> - <strong style="color:var(--primary-color);">Reviewer</strong>, FMTS 2026 (NeurIPS 2026 Workshop)
+
+                    </li>
+
+                    <li class="activity-entry activity-paper-accepted">
+
+                        <i>(September 24, 2026)</i> - <strong style="color:var(--primary-color);">Paper Accepted</strong>, NeurIPS 2026, OliO: ODE-based Linear Transition Operator for Self-Supervised Time Series Forecasting
+
+                    </li>
+
+                    <li class="activity-entry">
+
+                        <i>(April 2026~)</i> - <strong style="color:var(--primary-color);">Research Collaboration 3</strong>, Hyundai Motor Company <strong style="color:var(--primary-color);">[Ongoing]</strong>
+
+                    </li>
+
+                    <li class="activity-entry">
+
+                        <i>(April 2026~)</i> - <strong style="color:var(--primary-color);">Research Collaboration 2</strong>, Hyundai Motor Company <strong style="color:var(--primary-color);">[Ongoing]</strong>
+
+                    </li>
+
+                    <li class="activity-entry">
+
+                        <i>(December 1-7, 2025)</i> - <strong style="color:var(--primary-color);">Poster Presenter</strong>, NeurIPS 2025 (Conference on Neural Information Processing Systems), San Diego, USA (AliO)
+
+                    </li>
+
+                    <li class="activity-entry">
+
+                        <i>(November 25, 2025)</i> - <a href="https://github.com/KwangryeolPark/conference-deadlines"><strong style="color:var(--primary-color);">[Project] Conference Deadline Tracker</strong>, Local web server project <i class="fa-brands fa-github" style="color:var(--primary-color);"></i>, <strong style="color:var(--primary-color);">[Project Completed]</strong></a>
+
+                    </li>
+
+                    <li class="activity-entry">
+
+                        <i>(November 20, 2025)</i> - <strong style="color:var(--primary-color);">Poster Presenter</strong>, JKAIA 2025 (Joint Korean Artificial Intelligence Association)
+
+                    </li>
+
+                    <li class="activity-entry">
+
+                        <i>(November 11, 2025)</i> - <strong style="color:var(--primary-color);">Session Chair</strong>, CIKM 2025 (ACM International Conference on Information and Knowledge Management)
+
+                    </li>
+
+                    <li class="activity-entry">
+
+                        <i>(November 10-14, 2025)</i> - <strong style="color:var(--primary-color);">Paper Presenter (Oral)</strong>, CIKM 2025 (Smart ECU)
+
+                    </li>
+
+                    <li class="activity-entry">
+
+                        <i>(October 2025)</i> - <strong style="color:var(--primary-color);">Research Collaboration 1</strong>, Hyundai Motor Company <strong style="color:var(--primary-color);">[Completed]</strong>
+
+                    </li>
+
+                    <li class="activity-entry activity-paper-accepted">
+
+                        <i>(September 18, 2025)</i> - <strong style="color:var(--primary-color);">Paper Accepted</strong>, NeurIPS 2025, AliO: Output Alignment Matters in Long-Term Time Series Forecasting
+
+                    </li>
+
+                    <li class="activity-entry activity-paper-accepted">
+
+                        <i>(August 11, 2025)</i> - <strong style="color:var(--primary-color);">Paper Accepted</strong>, CIKM 2025 (Applied Research Track), Smart ECU: Scalable On-Vehicle Deployment of Drivetrain Fault Classification Systems for Commercial Electric Vehicles
+
+                    </li>
+
+                    <li class="activity-entry">
+
+                        <i>(April 24-28, 2025)</i> - <strong style="color:var(--primary-color);">Poster Presenter</strong>, ICLR 2025 (International Conference on Learning Representations)
+
+                    </li>
+
+                    <li class="activity-entry">
+
+                        <i>(February 25 - March 4, 2025)</i> - <strong style="color:var(--primary-color);">Poster Presenter</strong>, AAAI 2025 (The 39th Annual AAAI Conference on Artificial Intelligence)
+
+                    </li>
+
+                    <li class="activity-entry activity-paper-accepted">
+
+                        <i>(January 22, 2025)</i> - <strong style="color:var(--primary-color);">Paper Accepted</strong>, ICLR 2025, PPT: Patch Order Do Matters In Time Series Pretext Task
+
+                    </li>
+
+                    <li class="activity-entry activity-paper-accepted">
+
+                        <i>(December 9, 2024)</i> - <strong style="color:var(--primary-color);">Paper Accepted</strong>, AAAI 2025, SMMF: Square-Matricized Momentum Factorization for Memory-Efficient Optimization
+
+                    </li>
+
+                </ul>
+
+            </section>
+
+            <section class="section" id="skills">
+
+                <h2>Technical Skills & Expertise</h2>
+
+                <div class="skills-grid">
+
+                    <div class="skill-category">
+
+                        <h3>Core ML/DL & Data Science</h3>
+
+                        <ul>
+
+                            <li>PyTorch (Expert)</li>
+
+                            <li>TensorFlow</li>
+
+                            <li>Python (Pandas, NumPy, Scikit-learn)</li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="skill-category">
+
+                        <h3>Embedded Systems & Deployment</h3>
+
+                        <ul>
+
+                            <li>C/C++</li>
+
+                            <li>ARM (STM32, Microcontrollers)</li>
+
+                            <li>Linux, Docker (Deployment)</li>
+
+                            <li>Octave, Arduino, Expressif</li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="skill-category">
+
+                        <h3>Tools & Development</h3>
+
+                        <ul>
+
+                            <li>Visual Studio, Android Studio</li>
+
+                            <li>GitHub (Primary Version Control)</li>
+
+                            <li>HTML, CSS, Flutter (Web/Mobile)</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="section" id="interests">
+
+                <h2>Research Interests</h2>
+
+                <div>
+
+                    <span class="interest-tag">Agentic AI</span>
+
+                    <span class="interest-tag">GUI Agentic AI</span>
+
+                    <span class="interest-tag">Time Series Forecasting</span>
+
+                    <span class="interest-tag">Time Series Anomaly Detection</span>
+
+                    <span class="interest-tag">Prognostics and Health Management (PHM)</span>
+
+                    <span class="interest-tag">Self-Supervised Learning (SSL)</span>
+
+                    <span class="interest-tag">Memory-Efficient Optimization</span>
+
+                    <span class="interest-tag">Embedded / Edge AI</span>
+
+                    <span class="interest-tag">Large Language Models (LLM)</span>
+
+                    <span class="interest-tag">Multimodal AI</span>
+
+                </div>
+
+            </section>
+
+            <section class="section" id="education">
+
+                <h2>Education</h2>
+
+                <p>
+
+                    <strong class="education-university">Ulsan National Institute of Science and Technology (UNIST)</strong><br>
+
+                    AI Graduate School (Embedded AI Lab by Seulki Lee)<br>
+
+                    Ph.D. Candidate (Integrated M.S. & Ph.D. Program, Sep. 2022 - Present)<br>
+
+                    Currently conducting research at KAIST under the supervision of Prof. Seulki Lee.
+
+                </p>
+
+                <p>
+
+                    <strong class="education-university">Sangmyung University</strong><br>
+
+                    B.S. in Electronic Engineering (Embedded Systems Track)<br>
+
+                    Graduated as <strong style="color:var(--primary-color);">Valedictorian</strong> <strong style="color:var(--primary-color);">(Early Graduation)</strong> (~2022)
+
+                </p>
+
+            </section>
+
+        </div>
+
+    </div> <!-- page-layout 종료 -->
+
     <footer class="footer">
+
         © 2025 Kwangryeol Park. Built with Passion for AI.
+
     </footer>
 
 </body>
+
 </html>
