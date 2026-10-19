@@ -169,6 +169,25 @@
         }
 
         /* Publications */
+        .publication-list .title-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+        
+        .publication-list .title-row .title {
+            margin-bottom: 0;
+        }
+        
+        /* Same height as the title box: 1.1em font × 1.6 line-height + 12px vertical padding */
+        .publication-list .paper-logo {
+            height: calc(1.76em + 12px);
+            width: auto;
+            flex-shrink: 0;
+            border-radius: 4px;
+            object-fit: contain;
+        }
         .publication-list {
             list-style: none;
             padding: 0;
