@@ -169,15 +169,32 @@
         }
 
         /* Publications */
-        .publication-list .title-row {
+        .publication-list .pub-header {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 5px;
+            gap: 16px;
         }
         
-        .publication-list .title-row .title {
-            margin-bottom: 0;
+        .publication-list .pub-meta {
+            min-width: 0;
+        }
+        
+        .publication-list .pub-logo {
+            width: 130px;
+            height: 130px;
+            flex-shrink: 0;
+            object-fit: contain;
+            background: #f4f2ec;
+            border: 2px solid var(--accent-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+        
+        @media (max-width: 900px) {
+            .publication-list .pub-logo {
+                width: 90px;
+                height: 90px;
+            }
         }
         
         /* Same height as the title box: 1.1em font × 1.6 line-height + 12px vertical padding */
@@ -492,14 +509,16 @@
 
                 <ul class="publication-list">
                     <li>
-                        <div class="title-row">
-                            <img src="figures/paper-thumbnails/olio.png" alt="OliO Logo" class="paper-logo">
-                            <a href="https://arxiv.org/abs/2610.23345" class="title">OliO: ODE-based Linear Transition Operator for Self-Supervised Time Series Forecasting</a>
+                            <div class="pub-header">
+                            <img src="figures/paper-thumbnails/olio.png" alt="OliO Logo" class="pub-logo">
+                            <div class="pub-meta">
+                                <a href="https://arxiv.org/abs/2610.23345" class="title">OliO: ODE-based Linear Transition Operator for Self-Supervised Time Series Forecasting</a>
+                                <span class="journal">NeurIPS 2026 (Poster)</span>
+                                <span class="authors">
+                                    Authors: <span class="me">Kwangryeol Park</span>, Seulki Lee<span class="sup">*</span>
+                                </span>
+                            </div>
                         </div>
-                        <span class="journal">NeurIPS 2026 (Poster)</span>
-                        <span class="authors">
-                            Authors: <span class="me">Kwangryeol Park</span>, Seulki Lee<span class="sup">*</span>
-                        </span>
                         <ul class="bullet-summary">
                             <li><a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202026/150464.png?t=1791857063.7298853" style="color:var(--primary-color);"><i class="fa-solid fa-blog"></i> OliO NeurIPS Poster: Link</a></li>
                             <li><a href="https://github.com/eai-lab/OliO" style="color:var(--primary-color);"><i class="fa-brands fa-github"></i> OliO GitHub: Link</a></li>
