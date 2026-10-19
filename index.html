@@ -472,7 +472,32 @@
                 <h2>Publications</h2>
 
                 <ul class="publication-list">
-
+                    <li>
+                        <div class="title-row">
+                            <img src="figures/paper-thumbnails/olio.png" alt="OliO Logo" class="paper-logo">
+                            <a href="https://arxiv.org/abs/2610.23345" class="title">OliO: ODE-based Linear Transition Operator for Self-Supervised Time Series Forecasting</a>
+                        </div>
+                        <span class="journal">NeurIPS 2026 (Poster)</span>
+                        <span class="authors">
+                            Authors: <span class="me">Kwangryeol Park</span>, Seulki Lee<span class="sup">*</span>
+                        </span>
+                        <ul class="bullet-summary">
+                            <li><a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202026/150464.png?t=1791857063.7298853" style="color:var(--primary-color);"><i class="fa-solid fa-blog"></i> OliO NeurIPS Poster: Link</a></li>
+                            <li><a href="https://github.com/eai-lab/OliO" style="color:var(--primary-color);"><i class="fa-brands fa-github"></i> OliO GitHub: Link</a></li>
+                            <li><strong style="color:var(--primary-color);">Problem Identification:</strong> Identified that existing contrastive and masking-based SSL methods fail to explicitly model the <strong style="color:var(--primary-color);">signed temporal displacement</strong> between historical windows, either treating time lag as noise or disrupting the underlying temporal flow.</li>
+                            <li><strong style="color:var(--primary-color);">Methodology:</strong> Proposed <strong style="color:var(--primary-color);">OliO (ODE-based Linear Transition Operator)</strong>, a plug-and-play SSL framework that learns <strong style="color:var(--primary-color);">bidirectional, lag-conditioned transitions</strong> between representations using a closed-form operator derived from linear ODEs.</li>
+                            <li><strong style="color:var(--primary-color);">Theoretical Foundation:</strong> Constrained the generator to be <strong style="color:var(--primary-color);">strictly upper-triangular (nilpotent)</strong>, making transitions exactly expressible as <strong style="color:var(--primary-color);">finite polynomials in lag</strong> and avoiding the exponential divergence of unconstrained ODE-based models.</li>
+                            <li><strong style="color:var(--primary-color);">Key Advantage:</strong> Model-agnostic; the projection and transition modules are discarded after pre-training, so downstream forecasting keeps the <strong style="color:var(--primary-color);">original backbone's architecture and inference cost</strong> (PatchTST, iTransformer, TimeVLM).</li>
+                            <li><strong style="color:var(--primary-color);">Performance Highlights:</strong> Consistently outperformed state-of-the-art SSL baselines:
+                                <ul>
+                                    <li>MSE Reduction: Up to <strong style="color:var(--primary-color);">5.75%</strong> over TimesURL (strongest SSL baseline), winning <strong style="color:var(--primary-color);">58/72</strong> settings</li>
+                                    <li>vs. Random Init.: Up to <strong style="color:var(--primary-color);">9.2%</strong> lower MSE across three backbones</li>
+                                    <li>Zero-shot (LightGTS-4M): Lower average MSE than the default mask-reconstruction pre-training (<strong style="color:var(--primary-color);">0.3034</strong> vs. 0.3114)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <img src="figures/paper-thumbnails/olio-image.png" alt="OliO Figure" class="paper-image">
+                    </li>
                     <li>
 
                         <a href="https://openreview.net/forum?id=AuOZDp4gy7" class="title">AliO: Output Alignment Matters in Long-Term Time Series Forecasing</a>
